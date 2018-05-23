@@ -2,7 +2,7 @@
   <div>
     <div class="title">热门推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommandList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">
@@ -21,29 +21,8 @@
 <script>
   export default {
     name:'HomeRecommand',
-    data(){
-      return{
-        recommandList:[
-          {
-            id:'0001',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1411/1a/5582f9f24bc50b475a8cbda4c5ac8d24.water.jpg_150x150_7e9090b5.jpg',
-            title:'秦始皇博物院',
-            desc:'秦始皇博物院很壮观，很雄伟,厉害顶顶顶顶'
-          },
-          {
-            id:'0002',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1411/1a/5582f9f24bc50b475a8cbda4c5ac8d24.water.jpg_150x150_7e9090b5.jpg',
-            title:'秦始皇博物院',
-            desc:'秦始皇博物院很壮观，很雄伟,厉害顶顶顶顶'
-          },
-          {
-            id:'0003',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1411/1a/5582f9f24bc50b475a8cbda4c5ac8d24.water.jpg_150x150_7e9090b5.jpg',
-            title:'秦始皇博物院',
-            desc:'秦始皇博物院很壮观，很雄伟,厉害顶顶顶顶'
-          }
-        ]
-      }
+    props:{
+      list:Array
     }
 
   }
