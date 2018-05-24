@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1505/18/18ffcca94b1b7ca2.water.jpg_600x330_cd78f1b7.jpg" alt="">
+      <img class="banner-img" :src="bannerImg" alt="">
       <div class="banner-info">
         <div class="banner-title">
-          长恨歌
+          {{this.sightName}}
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe626;</span>
-          39
+          {{this.bannerImg.length}}
         </div>
       </div>
     </div>
-    <comman-gallery :imgs="imgs" v-show="showGallery" @close="handleGalleryClose"></comman-gallery>
+    <comman-gallery :imgs="bannerImg" v-show="showGallery" @close="handleGalleryClose"></comman-gallery>
   </div>
 
 </template>
@@ -20,10 +20,14 @@
   import  CommanGallery from 'comman/gallery/Gallery'
   export default {
     name:'DetailBanner',
+    props:{
+      sightName:String,
+      bannerImg:String,
+      galleryImgs:[String,Array]
+    },
     data(){
       return{
         showGallery:false,
-        imgs:['http://img1.qunarzz.com/sight/p0/1706/73/7349ea5c85af9d5ea3.img.png_r_800x800_2afd15e0.png','http://img1.qunarzz.com/sight/p0/1706/4d/4dc144af8b342ad2a3.img.png_r_800x800_740c4665.png']
       }
     },
     methods:{

@@ -17,7 +17,7 @@
     name:'CommanGallery',
     props:{
       imgs:{
-        type:Array,
+        type:[String,Array],
         default(){
           return []
         }
