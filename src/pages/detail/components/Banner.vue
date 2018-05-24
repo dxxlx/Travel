@@ -8,16 +8,21 @@
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe626;</span>
-          {{this.bannerImg.length}}
+          {{this.galleryImgs.length}}
         </div>
       </div>
     </div>
-    <comman-gallery :imgs="bannerImg" v-show="showGallery" @close="handleGalleryClose"></comman-gallery>
+    <fade-animation>
+      <comman-gallery :imgs="galleryImgs" v-show="showGallery" @close="handleGalleryClose"></comman-gallery>
+    </fade-animation>
+
+
   </div>
 
 </template>
 <script>
   import  CommanGallery from 'comman/gallery/Gallery'
+  import FadeAnimation from 'comman/fade/Fade'
   export default {
     name:'DetailBanner',
     props:{
@@ -39,7 +44,8 @@
       }
     },
     components:{
-      CommanGallery
+      CommanGallery,
+      FadeAnimation
     }
   }
 </script>
